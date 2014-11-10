@@ -7,7 +7,7 @@ class CategoryController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
-        //修改分支
+        //修改分支111
 	/**
 	 * @return array action filters
 	 */
