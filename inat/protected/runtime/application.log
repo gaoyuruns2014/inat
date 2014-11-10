@@ -1,0 +1,44 @@
+2014/11/09 03:36:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in I:\xampp\htdocs\yii15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 I:\xampp\htdocs\yii15\framework\web\CWebApplication.php(141): CWebApplication->runController('gii')
+#1 I:\xampp\htdocs\yii15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 I:\xampp\htdocs\yii15\inat\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii15/inat/index.php?r=gii
+---
+2014/11/09 17:34:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] 由于目标计算机积极拒绝，无法连接。
+' in I:\xampp\htdocs\yii15\framework\db\CDbConnection.php:382
+Stack trace:
+#0 I:\xampp\htdocs\yii15\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 I:\xampp\htdocs\yii15\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 I:\xampp\htdocs\yii15\framework\base\CModule.php(387): CDbConnection->init()
+#3 I:\xampp\htdocs\yii15\framework\base\CApplication.php(450): CModule->getComponent('db')
+#4 I:\xampp\htdocs\yii15\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#5 I:\xampp\htdocs\yii15\framework\db\ar\CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 I:\xampp\htdocs\yii15\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Category))
+#7 I:\xampp\htdocs\yii15\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 I:\xampp\htdocs\yii15\inat\protected\controllers\CategoryController.php(136): CActiveRecord->__construct('search')
+#9 I:\xampp\htdocs\yii15\framework\web\actions\CInlineAction.php(49): CategoryController->actionAdmin()
+#10 I:\xampp\htdocs\yii15\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 I:\xampp\htdocs\yii15\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#12 I:\xampp\htdocs\yii15\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#13 I:\xampp\htdocs\yii15\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#14 I:\xampp\htdocs\yii15\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#15 I:\xampp\htdocs\yii15\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#16 I:\xampp\htdocs\yii15\framework\web\CController.php(291): CFilterChain->run()
+#17 I:\xampp\htdocs\yii15\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 I:\xampp\htdocs\yii15\framework\web\CWebApplication.php(282): CController->run('admin')
+#19 I:\xampp\htdocs\yii15\framework\web\CWebApplication.php(141): CWebApplication->runController('category/admin')
+#20 I:\xampp\htdocs\yii15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#21 I:\xampp\htdocs\yii15\inat\index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/yii15/inat/index.php?r=category/admin
+---
+2014/11/09 17:56:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "categoryadmin".' in I:\xampp\htdocs\yii15\framework\web\CWebApplication.php:286
+Stack trace:
+#0 I:\xampp\htdocs\yii15\framework\web\CWebApplication.php(141): CWebApplication->runController('categoryadmin')
+#1 I:\xampp\htdocs\yii15\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 I:\xampp\htdocs\yii15\inat\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii15/inat/index.php?r=categoryadmin
+---
