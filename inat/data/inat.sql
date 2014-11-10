@@ -9,7 +9,7 @@ Source Database       : inat
 Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
-
+时间
 Date: 2014-11-06 10:02:06
 */
 
