@@ -42,3 +42,126 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/yii15/inat/index.php?r=categoryadmin
 ---
+2014/11/10 14:01:52 [error] [exception.CException] exception 'CException' with message 'Property "CDbConnection.prefix" is not defined.' in I:\xampp\htdocs\inat\framework\base\CComponent.php:173
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\YiiBase.php(220): CComponent->__set('prefix', '')
+#1 I:\xampp\htdocs\inat\framework\base\CModule.php(386): YiiBase::createComponent(Array)
+#2 I:\xampp\htdocs\inat\framework\base\CApplication.php(450): CModule->getComponent('db')
+#3 I:\xampp\htdocs\inat\framework\db\ar\CActiveRecord.php(634): CApplication->getDb()
+#4 I:\xampp\htdocs\inat\framework\db\ar\CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#5 I:\xampp\htdocs\inat\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Brand))
+#6 I:\xampp\htdocs\inat\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
+#7 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(11): CActiveRecord->__construct()
+#8 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#9 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 I:\xampp\htdocs\inat\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 I:\xampp\htdocs\inat\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): CController->run('show')
+#13 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController('brand/show')
+#14 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 I:\xampp\htdocs\inat\inat\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+---
+2014/11/10 14:02:25 [error] [exception.CException] exception 'CException' with message 'BrandController cannot find the requested view "brand".' in I:\xampp\htdocs\inat\framework\web\CController.php:878
+Stack trace:
+#0 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(20): CController->renderPartial('brand')
+#1 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#2 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 I:\xampp\htdocs\inat\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 I:\xampp\htdocs\inat\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): CController->run('show')
+#6 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController('brand/show')
+#7 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 I:\xampp\htdocs\inat\inat\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+---
+2014/11/10 14:04:52 [error] [exception.CException] exception 'CException' with message 'BrandController cannot find the requested view "brand".' in I:\xampp\htdocs\inat\framework\web\CController.php:878
+Stack trace:
+#0 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(25): CController->renderPartial('brand')
+#1 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#2 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 I:\xampp\htdocs\inat\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 I:\xampp\htdocs\inat\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): CController->run('show')
+#6 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController('brand/show')
+#7 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 I:\xampp\htdocs\inat\inat\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+---
+2014/11/10 14:20:01 [error] [php] Use of undefined constant IMG_URL - assumed 'IMG_URL' (I:\xampp\htdocs\inat\inat\protected\views\brand\show.php:41)
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(869): BrandController->renderFile()
+#1 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(31): BrandController->renderPartial()
+#2 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#3 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 I:\xampp\htdocs\inat\framework\web\CController.php(286): BrandController->runAction()
+#5 I:\xampp\htdocs\inat\framework\web\CController.php(265): BrandController->runActionWithFilters()
+#6 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): BrandController->run()
+#7 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 I:\xampp\htdocs\inat\inat\index.php(13): CWebApplication->run()
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+in I:\xampp\htdocs\inat\inat\protected\views\brand\show.php (41)
+in I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php (31)
+in I:\xampp\htdocs\inat\inat\index.php (13)
+2014/11/10 14:20:16 [error] [php] Use of undefined constant IMG_URL - assumed 'IMG_URL' (I:\xampp\htdocs\inat\inat\protected\views\brand\show.php:41)
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(869): BrandController->renderFile()
+#1 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(31): BrandController->renderPartial()
+#2 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#3 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 I:\xampp\htdocs\inat\framework\web\CController.php(286): BrandController->runAction()
+#5 I:\xampp\htdocs\inat\framework\web\CController.php(265): BrandController->runActionWithFilters()
+#6 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): BrandController->run()
+#7 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 I:\xampp\htdocs\inat\inat\index.php(13): CWebApplication->run()
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+in I:\xampp\htdocs\inat\inat\protected\views\brand\show.php (41)
+in I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php (31)
+in I:\xampp\htdocs\inat\inat\index.php (13)
+2014/11/10 14:20:42 [error] [php] Use of undefined constant IMG_URL - assumed 'IMG_URL' (I:\xampp\htdocs\inat\inat\protected\views\brand\show.php:51)
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(869): BrandController->renderFile()
+#1 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(31): BrandController->renderPartial()
+#2 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#3 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 I:\xampp\htdocs\inat\framework\web\CController.php(286): BrandController->runAction()
+#5 I:\xampp\htdocs\inat\framework\web\CController.php(265): BrandController->runActionWithFilters()
+#6 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): BrandController->run()
+#7 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 I:\xampp\htdocs\inat\inat\index.php(13): CWebApplication->run()
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+in I:\xampp\htdocs\inat\inat\protected\views\brand\show.php (51)
+in I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php (31)
+in I:\xampp\htdocs\inat\inat\index.php (13)
+2014/11/10 14:20:57 [error] [php] Use of undefined constant IMG_URL - assumed 'IMG_URL' (I:\xampp\htdocs\inat\inat\protected\views\brand\show.php:136)
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(869): BrandController->renderFile()
+#1 I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php(31): BrandController->renderPartial()
+#2 I:\xampp\htdocs\inat\framework\web\actions\CInlineAction.php(49): BrandController->actionShow()
+#3 I:\xampp\htdocs\inat\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 I:\xampp\htdocs\inat\framework\web\CController.php(286): BrandController->runAction()
+#5 I:\xampp\htdocs\inat\framework\web\CController.php(265): BrandController->runActionWithFilters()
+#6 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): BrandController->run()
+#7 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 I:\xampp\htdocs\inat\inat\index.php(13): CWebApplication->run()
+REQUEST_URI=/inat/inat/index.php?r=brand/show
+in I:\xampp\htdocs\inat\inat\protected\views\brand\show.php (136)
+in I:\xampp\htdocs\inat\inat\protected\controllers\BrandController.php (31)
+in I:\xampp\htdocs\inat\inat\index.php (13)
+2014/11/10 14:52:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in I:\xampp\htdocs\inat\framework\web\CController.php:483
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(270): CController->missingAction('create')
+#1 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): CController->run('create')
+#2 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController('brand/create')
+#3 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 I:\xampp\htdocs\inat\inat\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/inat/inat/index.php?r=brand/create
+---

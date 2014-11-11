@@ -14,7 +14,7 @@ return array(
 
 	// autoloading model and component classes
 	'import'=>array(
-		'application.models.*',
+		'application.models.*',     //全部载入model的类，在其他地方可以直接new model类
 		'application.components.*',
 	),
 
@@ -58,6 +58,7 @@ return array(
 			'username' => 'root',
 			'password' => 'root',
 			'charset' => 'utf8',
+//                        'prefix' =>'',
 		),
 		
 		'errorHandler'=>array(
@@ -72,11 +73,11 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				/*
+				//展现页面的调试堆栈
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				*/
+				
 			),
 		),
 	),
