@@ -150,5 +150,6 @@ class Supplier extends CActiveRecord {
         $sql = 'select * from {{supplier}}} where active = 1 order by sort';
         return $this->findAllBySql($sql);
     }
+    
 
 }

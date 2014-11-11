@@ -16,12 +16,12 @@
  * @property string $category_default_id
  * @property string $shop_id
  * @property string $id_tax_rules_group
- * @property integer $on_sale
- * @property integer $online_only
+ * @property int $on_sale
+ * @property int $online_only
  * @property string $ean13
  * @property string $upc
  * @property string $tax
- * @property integer $quantity
+ * @property int $quantity
  * @property string $minimal_quantity
  * @property string $price
  * @property string $wholesale_price
@@ -36,26 +36,26 @@
  * @property string $depth
  * @property string $weight
  * @property string $out_of_stock
- * @property integer $quantity_discount
- * @property integer $customizable
- * @property integer $uploadable_files
- * @property integer $text_fields
- * @property integer $active
+ * @property int $quantity_discount
+ * @property int $customizable
+ * @property int $uploadable_files
+ * @property int $text_fields
+ * @property int $active
  * @property string $redirect_type
  * @property string $id_product_redirected
- * @property integer $available_for_order
+ * @property int $available_for_order
  * @property string $available_date
  * @property string $condition
- * @property integer $show_price
- * @property integer $indexed
+ * @property int $show_price
+ * @property int $indexed
  * @property string $visibility
- * @property integer $cache_is_pack
- * @property integer $cache_has_attachments
- * @property integer $is_virtual
+ * @property int $cache_is_pack
+ * @property int $cache_has_attachments
+ * @property int $is_virtual
  * @property string $cache_default_attribute
- * @property integer $created
- * @property integer $modified
- * @property integer $advanced_stock_management
+ * @property int $created
+ * @property int $modified
+ * @property int $advanced_stock_management
  */
 class Goods extends CActiveRecord {
 
@@ -74,7 +74,7 @@ class Goods extends CActiveRecord {
 // will receive user inputs.
         return array(
             array('name, id_tax_rules_group, available_date, created, modified', 'required'),
-            array('on_sale, online_only, quantity, quantity_discount, customizable, uploadable_files, text_fields, active, available_for_order, show_price, indexed, cache_is_pack, cache_has_attachments, is_virtual, created, modified, advanced_stock_management', 'numerical', 'integerOnly' => true),
+            array('on_sale, online_only, quantity, quantity_discount, customizable, uploadable_files, text_fields, active, available_for_order, show_price, indexed, cache_is_pack, cache_has_attachments, is_virtual, created, modified, advanced_stock_management', 'numerical', 'intOnly' => true),
             array('name, meta_title', 'length', 'max' => 128),
             array('meta_description, meta_keywords, unity', 'length', 'max' => 255),
             array('supplier_id, manufacturer_id, category_default_id, shop_id, minimal_quantity, out_of_stock, id_product_redirected, cache_default_attribute', 'length', 'max' => 10),
@@ -249,15 +249,186 @@ class Goods extends CActiveRecord {
     }
 
     /**
-     * 添加商品
+     * 修改商品
      * 
      * @param object $good 商品对象
      * @parma string $option 添加方式 admin--运营后台，sell--商户
+     * @parma int $seller_id 商户id
      * 
      * @return bool true--添加成功，false--添加失败
      */
     public function add($good, $option = 'admin') {
         
     }
-    
-}  
+
+    /**
+     * 修改商品
+     * 
+     * @param object $good 商品对象
+     * @parma string $option 添加方式 admin--运营后台，sell--商户
+     * @parma int $seller_id 商户id
+     * 
+     * @return bool true--添加成功，false--添加失败
+     */
+    public function update($id, $good, $option = 'admin', $seller_id = 0) {
+        
+    }
+
+    /**
+     * 重置类目商品顺序
+     * 
+     * @param object $category_id 类目编号
+     * 
+     * @return bool true--成功，false--失败
+     */
+    public static function cleanPositions($category_id) {
+        
+    }
+
+    /**
+     * 设置商品的有效期
+     * 
+     * 
+     * @return bool true--成功，false--失败
+     */
+    public function setAvailableDate($available_date = '0000-00-00') {
+        
+    }
+
+    /**
+     * 得到商品的有效期
+     *
+     * @param int $id 商品id
+     * @return object
+     */
+    public static function getAvailableDate($id) {
+        
+    }
+
+    /**
+     * 锁定商品状态.
+     * 
+     * @param int $id 待锁定商品id
+     * 
+     * @return true 成功， false 失败
+     */
+    public function lock($id) {
+        //设置品牌的激活状态为0，即锁定状态
+        $sql = 'update {{brand}} set active = 0 where id = ' . $id;
+        return $this->findBySql($sql);
+    }
+
+    /**
+     * 解锁商品的状态.
+     * 
+     * @param int $id 待解锁商品id
+     * 
+     * @return true 成功， false 失败
+     */
+    public function unlock($id) {
+        //设置品牌的激活状态为0，即锁定状态
+        $sql = 'update {{brand}} set active = 1 where id = ' . $id;
+        return $this->findBySql($sql);
+    }
+
+    /**
+     * 删除商品.
+     * 
+     * @param int $ids 删除商品ids
+     * 
+     * @return true 成功， false 失败
+     */
+    public function delete($ids) {
+        
+    }
+
+    /**
+     * 添加商品到指定类目.
+     * 
+     * @param int $id 商品id
+     * @param int $category_ids 商品类目ids
+     * 
+     * @return true 成功， false 失败
+     */
+    public function addToCategories($id, $category_ids) {
+        
+    }
+
+    /**
+     * 
+     * 删除商品从指定类目.
+     * 
+     * @param int $id 商品id
+     * @param int $category_ids 商品类目ids
+     * 
+     * @return true 成功， false 失败
+     */
+    public function deleteCategories($id, $category_ids) {
+        
+    }
+
+    /**
+     * 删除商品标签.
+     * 
+     * @param int $id 商品id
+     * 
+     * @return true 成功， false 失败
+     */
+    public function deleteTags($id) {
+        
+    }
+
+    /**
+     * 返回产品列表
+     *
+     * @param int $start Start number
+     * @param int $limit 
+     * @param string $order_by 
+     * @param bool $only_active
+     * @param string $order_way  (ASC or DESC)
+     * @return array Products 
+     */
+    public static function getList($start, $limit, $order_by, $order_way, $only_active = false) {
+        
+    }
+
+    /**
+     * 返回最新产品列表
+     *
+     * @param int $category_id 类别
+     * @param int $limit 
+     * @param bool $only_active
+     * @return array Products 
+     */
+    public static function getNew($limit, $category_id = 0, $only_active = false) {
+        
+    }
+
+    /**
+     * 返回商品的类目信息
+     *
+     * @return array of categories
+     */
+    public function getCategories($id) {
+        
+    }
+
+    /**
+     * 返回商品的图片信息
+     *
+     * @return array of categories
+     */
+    public function getImages($id) {
+        
+    }
+
+    /**
+     * 返回商品的封面图片
+     *
+     * @return array of categories
+     */
+    public function getCovers($id) {
+        
+    }
+
+}
