@@ -165,3 +165,23 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/inat/inat/index.php?r=brand/create
 ---
+2014/11/11 15:13:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in I:\xampp\htdocs\inat\framework\web\CController.php:483
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(270): CController->missingAction('create')
+#1 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): CController->run('create')
+#2 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController('brand/create')
+#3 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 I:\xampp\htdocs\inat\inat\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/inat/inat/index.php?r=brand/create
+---
+2014/11/11 15:16:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "create".' in I:\xampp\htdocs\inat\framework\web\CController.php:483
+Stack trace:
+#0 I:\xampp\htdocs\inat\framework\web\CController.php(270): CController->missingAction('create')
+#1 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(282): CController->run('create')
+#2 I:\xampp\htdocs\inat\framework\web\CWebApplication.php(141): CWebApplication->runController('brand/create')
+#3 I:\xampp\htdocs\inat\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 I:\xampp\htdocs\inat\inat\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/inat/inat/index.php?r=brand/create
+---
