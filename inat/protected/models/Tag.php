@@ -120,6 +120,20 @@ class Tag extends CActiveRecord {
     }
 
     /**
+     * 修改对象标签
+     * 
+     * 
+     * @param int $object_id 对象id
+     * @param int $object_type 对象类型 1--商品， 2--文章， 3--作者
+     * @param string $keywords 标签，以逗号分隔
+     * @param string $separator 分隔符
+     * @return bool true 成功， false 失败 
+     */
+    public function update($object_id, $object_type, $keywords, $separator = ',') {
+        
+    }
+
+    /**
      * 为对象删除标签
      * 
      * 
@@ -128,6 +142,30 @@ class Tag extends CActiveRecord {
      * @return bool true 成功， false 失败 
      */
     public function delete($object_id, $object_type) {
+        
+    }
+
+    /**
+     * 得到指定用户的常用标签
+     * 
+     * 
+     * @param int $uid 用户id
+     * @param int $num 得到的标签数
+     * @return array tags 
+     */
+    public function getByUid($uid, $num) {
+        
+    }
+
+    /**
+     * 得到指定分类的常用标签
+     * 
+     * 
+     * @param int $category_id 分类id
+     * @param int $num 得到的标签数
+     * @return array tags 
+     */
+    public function getByCategoryId($category_id, $num) {
         
     }
 
@@ -206,6 +244,23 @@ class Tag extends CActiveRecord {
      * @return array  
      */
     public function getMembersById($id) {
+        
+    }
+
+    /**
+     * 得到标签的用户列表
+     * 
+     */
+    private function _init() {
+        
+    }
+
+    /**
+     * 清除标签缓存
+     * 
+     * @param $key 键值
+     */
+    private function _clearCache($key) {
         
     }
 
