@@ -137,6 +137,19 @@ class Category extends CActiveRecord {
 
     /**
      * 添加商品分类
+     * 通过对象入口参数来添加商品分类
+     * @param  string   $name 商品分类名称
+     * @param  int  $parent_id  父类id
+     * @param  int  $visibility 是否可见
+     * @return bool
+     */
+    public static function add($name, $parent_id, $visibility = 1) {
+        //检查名称在同级类别下是否已经存在
+        if()
+    }
+
+    /**
+     * 添加商品分类
      * 通过对象入口商品名称等
      * @param  string  $name 分类名称
      * @param  int  $parent_id 分类别id
@@ -151,8 +164,6 @@ class Category extends CActiveRecord {
     public static function addByInfo($name, $parent_id, $code = '', $visibility = 1, $keyword = '', $descript = '', $title = '', $active = 1) {
         return $category;
     }
-
-  
 
     /**
      * 修改产品分类
@@ -442,6 +453,32 @@ class Category extends CActiveRecord {
     }
 
     /**
+     * 清除指定类目缓存
+     * @param   int $id  类目id
+     * @return 
+     */
+    public function unique($name, $parent_id) {
+        //检查一下相应的类目名称是否在父类存在
+        $sql = 'select name from {{category}} where parent_id = ' . $parent_id . ' and name = ' . $name;
+        $cat = $this->findBySql($sql);
+        if(cat){
+            return true;
+        }else{
+            return false;
+        }
+            
+    }
+
+    /**
+     * 清除指定类目缓存
+     * @param   int $id  类目id
+     * @return 
+     */
+    public function _unique($name, $parent_id) {
+        
+    }
+
+    /**
      * 判断指定编号类目是否是叶子节点
      *
      * @param   int $id  类目id
@@ -482,7 +519,7 @@ class Category extends CActiveRecord {
      * 清除类目缓存
      * @return  bool  true: 是 false:不是
      */
-    public function _clearCache() {
+    private function _clearCache() {
         
     }
 
@@ -491,7 +528,7 @@ class Category extends CActiveRecord {
      * @param   int $id  类目id
      * @return 
      */
-    public function _clearCacheById($id) {
+    private function _clearCacheById($id) {
         
     }
 
