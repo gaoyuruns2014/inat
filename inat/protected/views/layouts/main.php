@@ -30,12 +30,14 @@
         <!-- END PAGE LEVEL PLUGIN STYLES -->
         <!-- BEGIN PAGE STYLES -->
         <link href="./assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
+        <link href="./assets/admin/layout/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href="./assets/extension/datatables/css/jquery.datatables.css" rel="stylesheet" type="text/css"/>
         <!-- END PAGE STYLES -->
         <!-- BEGIN THEME STYLES -->
         <link href="./assets/global/css/components.css" rel="stylesheet" type="text/css"/>
         <link href="./assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
         <link href="./assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
-        <link href="./assets/admin/layout/css/themes/light2.css" rel="stylesheet" type="text/css" id="style_color"/>
+        <link href="./assets/admin/layout/css/themes/blue.css" rel="stylesheet" type="text/css" id="style_color"/>
         <link href="./assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
         <!-- END THEME STYLES -->
         <link rel="shortcut icon" href="favicon.ico"/>
@@ -507,12 +509,12 @@
                             </a>
                             <ul class="sub-menu">
                                 <li>
-                                    <a href="ecommerce_index.html">
+                                    <a href="index.php?r=goods">
                                         <i class="icon-home"></i>
                                         商品管理</a>
                                 </li>
                                 <li>
-                                    <a href="ecommerce_orders.html">
+                                    <a href="index.php?r=category">
                                         <i class="icon-basket"></i>
                                         商品类别</a>
                                 </li>
@@ -527,14 +529,14 @@
                                         商品规格</a>
                                 </li>
                                 <li>
-                                    <a href="ecommerce_products_edit.html">
+                                    <a href="index.php?r=manufacturer/index">
                                         <i class="icon-pencil"></i>
                                         制造商</a>
                                 </li>
                                 <li>
-                                    <a href="ecommerce_products_edit.html">
+                                    <a href="index.php?r=supplier/index">
                                         <i class="icon-pencil"></i>
-                                        制作者</a>
+                                        供应商</a>
                                 </li> 
                                 <li>
                                     <a href="ecommerce_products_edit.html">
@@ -820,6 +822,8 @@
             <script src="./assets/global/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script>
             <script src="./assets/global/plugins/bootstrap-wysihtml5/wysihtml5-0.3.0.js" type="text/javascript"></script>
             <script src="./assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
+            <script src="./assets/extension/datatables/js/jqury.datatables.js" type="text/javascript"></script>
+            <script src="./assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.js" type="text/javascript"></script>
             <!-- BEGIN:File Upload Plugin JS files-->
             <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
             <script src="./assets/global/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js"></script>
@@ -859,6 +863,8 @@
             <script src="./assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
             <script src="./assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
             <script src="./assets/admin/pages/scripts/inbox.js" type="text/javascript"></script>
+            <script src="./assets/extension/datatables/js/dataTables.bootstrap.js" type="text/javascript"></script>
+        
             <script>
                 jQuery(document).ready(function () {
                     // initiate layout and plugins

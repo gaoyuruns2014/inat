@@ -134,20 +134,6 @@ class Category extends CActiveRecord {
     public static function add($category) {
         return $category;
     }
-
-    /**
-     * 添加商品分类
-     * 通过对象入口参数来添加商品分类
-     * @param  string   $name 商品分类名称
-     * @param  int  $parent_id  父类id
-     * @param  int  $visibility 是否可见
-     * @return bool
-     */
-    public static function add($name, $parent_id, $visibility = 1) {
-        //检查名称在同级类别下是否已经存在
-        if()
-    }
-
     /**
      * 添加商品分类
      * 通过对象入口商品名称等
@@ -461,12 +447,11 @@ class Category extends CActiveRecord {
         //检查一下相应的类目名称是否在父类存在
         $sql = 'select name from {{category}} where parent_id = ' . $parent_id . ' and name = ' . $name;
         $cat = $this->findBySql($sql);
-        if(cat){
+        if (cat) {
             return true;
-        }else{
+        } else {
             return false;
         }
-            
     }
 
     /**

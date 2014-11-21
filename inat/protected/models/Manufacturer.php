@@ -7,148 +7,134 @@
  * @property string $id
  * @property string $name
  * @property string $desc
+ * @property string $admin
+ * @property string $country
+ * @property string $province
+ * @property string $city
+ * @property string $address
+ * @property string $zip
+ * @property string $tel
+ * @property string $mobile
  * @property string $logo
  * @property integer $created
  * @property integer $updated
  * @property integer $active
  */
-class Manufacturer extends CActiveRecord {
+class Manufacturer extends CActiveRecord
+{
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName()
+	{
+		return 'manufacturer';
+	}
 
-    /**
-     * @return string the associated database table name
-     */
-    public function tableName() {
-        return 'manufacturer';
-    }
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules()
+	{
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('name, desc, logo, created, updated', 'required'),
+			array('created, updated, active', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>64),
+			array('desc, logo', 'length', 'max'=>255),
+			array('admin, country, province, city', 'length', 'max'=>20),
+			array('address', 'length', 'max'=>100),
+			array('zip', 'length', 'max'=>10),
+			array('tel', 'length', 'max'=>12),
+			array('mobile', 'length', 'max'=>11),
+			// The following rule is used by search().
+			// @todo Please remove those attributes that should not be searched.
+			array('id, name, desc, admin, country, province, city, address, zip, tel, mobile, logo, created, updated, active', 'safe', 'on'=>'search'),
+		);
+	}
 
-    /**
-     * @return array validation rules for model attributes.
-     */
-    public function rules() {
-        // NOTE: you should only define rules for those attributes that
-        // will receive user inputs.
-        return array(
-            array('name, desc, logo, created, updated', 'required'),
-            array('created, updated, active', 'numerical', 'integerOnly' => true),
-            array('name', 'length', 'max' => 64),
-            array('desc, logo', 'length', 'max' => 255),
-            // The following rule is used by search().
-            // @todo Please remove those attributes that should not be searched.
-            array('id, name, desc, logo, created, updated, active', 'safe', 'on' => 'search'),
-        );
-    }
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations()
+	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
 
-    /**
-     * @return array relational rules.
-     */
-    public function relations() {
-        // NOTE: you may need to adjust the relation name and the related
-        // class name for the relations automatically generated below.
-        return array(
-        );
-    }
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels()
+	{
+		return array(
+			'id' => '编号',
+			'name' => '名称',
+			'desc' => '描述',
+			'admin' => '联系人',
+			'country' => '国家',
+			'province' => '省份',
+			'city' => '城市',
+			'address' => '地址',
+			'zip' => '邮编',
+			'tel' => '电话',
+			'mobile' => '手机',
+			'logo' => 'logo',
+			'created' => '创建时间',
+			'updated' => '修改时间',
+			'active' => '激活状态',
+		);
+	}
 
-    /**
-     * @return array customized attribute labels (name=>label)
-     */
-    public function attributeLabels() {
-        return array(
-            'id' => '编号',
-            'name' => '名称',
-            'desc' => '描述',
-            'logo' => 'logo',
-            'created' => '创建时间',
-            'updated' => '修改时间',
-            'active' => '激活状态',
-        );
-    }
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 *
+	 * Typical usecase:
+	 * - Initialize the model fields with values from filter form.
+	 * - Execute this method to get CActiveDataProvider instance which will filter
+	 * models according to data in model fields.
+	 * - Pass data provider to CGridView, CListView or any similar widget.
+	 *
+	 * @return CActiveDataProvider the data provider that can return the models
+	 * based on the search/filter conditions.
+	 */
+	public function search()
+	{
+		// @todo Please modify the following code to remove attributes that should not be searched.
 
-    /**
-     * Retrieves a list of models based on the current search/filter conditions.
-     *
-     * Typical usecase:
-     * - Initialize the model fields with values from filter form.
-     * - Execute this method to get CActiveDataProvider instance which will filter
-     * models according to data in model fields.
-     * - Pass data provider to CGridView, CListView or any similar widget.
-     *
-     * @return CActiveDataProvider the data provider that can return the models
-     * based on the search/filter conditions.
-     */
-    public function search() {
-        // @todo Please modify the following code to remove attributes that should not be searched.
+		$criteria=new CDbCriteria;
 
-        $criteria = new CDbCriteria;
+		$criteria->compare('id',$this->id,true);
+		$criteria->compare('name',$this->name,true);
+		$criteria->compare('desc',$this->desc,true);
+		$criteria->compare('admin',$this->admin,true);
+		$criteria->compare('country',$this->country,true);
+		$criteria->compare('province',$this->province,true);
+		$criteria->compare('city',$this->city,true);
+		$criteria->compare('address',$this->address,true);
+		$criteria->compare('zip',$this->zip,true);
+		$criteria->compare('tel',$this->tel,true);
+		$criteria->compare('mobile',$this->mobile,true);
+		$criteria->compare('logo',$this->logo,true);
+		$criteria->compare('created',$this->created);
+		$criteria->compare('updated',$this->updated);
+		$criteria->compare('active',$this->active);
 
-        $criteria->compare('id', $this->id, true);
-        $criteria->compare('name', $this->name, true);
-        $criteria->compare('desc', $this->desc, true);
-        $criteria->compare('logo', $this->logo, true);
-        $criteria->compare('created', $this->created);
-        $criteria->compare('updated', $this->updated);
-        $criteria->compare('active', $this->active);
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 
-        return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
-    }
-
-    /**
-     * Returns the static model of the specified AR class.
-     * Please note that you should have this exact method in all your CActiveRecord descendants!
-     * @param string $className active record class name.
-     * @return Manufacturer the static model class
-     */
-    public static function model($className = __CLASS__) {
-        return parent::model($className);
-    }
-
-    /**
-     * 锁定制造商状态.
-     * 
-     * @param int $id 待锁定制造商id
-     * 
-     * @return true 成功， false 失败
-     */
-    public function lock($id) {
-        //设置制造商的激活状态为0，即锁定状态
-        $sql = 'update {{manufacturer}} set active = 0 where id = ' . $id;
-        return $this->findBySql($sql);
-    }
-
-    /**
-     * 解锁制造商的状态.
-     * 
-     * @param int $id 待解锁制造商id
-     * 
-     * @return true 成功， false 失败
-     */
-    public function unlock($id) {
-        //设置制造商的激活状态为0，即锁定状态
-        $sql = 'update {{manufacturer}} set active = 1 where id = ' . $id;
-        return $this->findBySql($sql);
-    }
-
-    /**
-     * 返回所有制造商信息.
-     * 
-     * @return CActiveRecord 包含所有制造商的内
-     */
-    public function listAll() {
-        //设置制造商的激活状态为0，即锁定状态
-        $sql = 'select * from {{manufacturer}}';
-        return $this->findAllBySql($sql);
-    }
-
-    /**
-     * 返回所有有效制造商信息.
-     * 
-     * @return CActiveRecord 对象数组，包含所有制造商的内容
-     */
-    public function listActive() {
-        //设置制造商的激活状态为0，即锁定状态
-        $sql = 'select * from {{manufacturer}} where active = 1 order by sort';
-        return $this->findAllBySql($sql);
-    }
-
+	/**
+	 * Returns the static model of the specified AR class.
+	 * Please note that you should have this exact method in all your CActiveRecord descendants!
+	 * @param string $className active record class name.
+	 * @return Manufacturer the static model class
+	 */
+	public static function model($className=__CLASS__)
+	{
+		return parent::model($className);
+	}
 }

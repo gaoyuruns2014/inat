@@ -261,18 +261,18 @@ class Goods extends CActiveRecord {
         
     }
 
-    /**
-     * 修改商品
-     * 
-     * @param object $good 商品对象
-     * @parma string $option 添加方式 admin--运营后台，sell--商户
-     * @parma int $seller_id 商户id
-     * 
-     * @return bool true--添加成功，false--添加失败
-     */
-    public function update($id, $good, $option = 'admin', $seller_id = 0) {
-        
-    }
+//    /**
+//     * 修改商品
+//     * 
+//     * @param object $good 商品对象
+//     * @parma string $option 添加方式 admin--运营后台，sell--商户
+//     * @parma int $seller_id 商户id
+//     * 
+//     * @return bool true--添加成功，false--添加失败
+//     */
+//    public function update($id, $good, $option = 'admin', $seller_id = 0) {
+//        
+//    }
 
     /**
      * 重置类目商品顺序
@@ -338,7 +338,7 @@ class Goods extends CActiveRecord {
      * 
      * @return true 成功， false 失败
      */
-    public function delete($ids) {
+    public function deleteByIds($ids) {
         
     }
 
